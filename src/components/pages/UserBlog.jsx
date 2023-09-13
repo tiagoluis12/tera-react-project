@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Default from "../templates/Default";
 
 import user1 from "../../images/placeholders/user-1.jpg";
 import post1 from "../../images/placeholders/post-1.jpg";
 import post2 from "../../images/placeholders/post-2.jpg";
 import post3 from "../../images/placeholders/post-3.jpg";
+import AppLoading from "../organisms/AppLoading";
 
 export default function UserBlog() {
-  return (
+  const [user, setUser] = useState({});
+  const [posts, setPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {}, [])
+
+  return isLoading ? (
+    <AppLoading />
+  ) : (
     <Default>
       <div className="user-blog">
         <div className="user-blog__header">
