@@ -1,0 +1,13 @@
+.home > * {
+  margin-bottom: 20px;
+}
+
+.logo,
+.homeSelectUsers {
+  max-width: 250px;
+}
+
+.homeSelectUsers {
+  width: 100%;
+  padding: 10px;
+}
