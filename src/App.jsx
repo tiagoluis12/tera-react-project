@@ -5,12 +5,19 @@ import Users from './components/pages/Users'
 import UserBlog from './components/pages/UserBlog'
 import PostForm from './components/pages/PostForm'
 
+import { CurrentUserContext } from "./contexts/CurrentUserContext"
+
 import "./styles/normalize.css"
 import "./styles/fontawesome.min.css"
 import "./styles/main.css"
+import { useState } from "react"
 
 function App() {
+  const [currentUser, setCurrentUser] = useState("")
+
+
   return (
+    <CurrentUserContext.Provider value={{ currentUser, setCurrentUser}}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -20,6 +27,7 @@ function App() {
         <Route path="*" element={<h1>Not Found</h1>} />
         </Routes>
     </BrowserRouter>
+    </CurrentUserContext.Provider>
   )
 }
 

@@ -3,14 +3,16 @@ import { Link } from 'react-router-dom';
 import logo from "../../images/logo.svg";
 import DrawerMenu from "../molecules/DrawerMenu";
 
+import styles from "./Default.module.css"
+
 export default function Default(props) {
   const [open, setOpen] = useState(false);
 
   return (
     <div className="wrapper">
       <DrawerMenu open={open} setOpen={setOpen} />
-      <div className="app-header">
-        <div className="app-header__logo">
+      <div className={styles.appHeader}>
+        <div className={styles.logo}>
           <Link to="/">
           <img src={logo} className="responsive" alt="" />
           </Link>
@@ -20,7 +22,7 @@ export default function Default(props) {
         </div>
       </div>
       {props.children}
-      <div className="app-footer">Módulo React :: Full Stack Development</div>
+      <div className={styles.appFooter}>Módulo React :: Full Stack Development</div>
     </div>
   );
 }
